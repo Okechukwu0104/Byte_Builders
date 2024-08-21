@@ -19,3 +19,6 @@ sum = (number_one + number_two + number_three)
 mean = sum / 3
 
 print("The mean: ", round(mean,2))
+
+print("lets do another calculation")
+
