@@ -1,4 +1,4 @@
- """
+"""
 1) prompt the user to input the first number
 2) store the number as "number_one"
 3) prompt the user to input the second number
@@ -18,7 +18,4 @@ number_three = int(input("input your 2nd number"))
 sum = (number_one + number_two + number_three)
 mean = sum / 3
 
-print ("The mean: ", round(mean,2))
-
-print ("lets do another calculation")
-
+print("The mean: ", round(mean,2))
