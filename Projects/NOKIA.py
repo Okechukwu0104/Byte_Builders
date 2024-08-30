@@ -54,7 +54,8 @@ def nokia():
             case _:
                 print("Wrong input")
                 nokia()
-
+		
+		
 def phonebook_menu():
     while True:
         print("""
@@ -103,6 +104,11 @@ def phonebook_menu():
                 print("Wrong input")
                 phonebook_menu()
 
+
+
+
+
+
 def options_menu() :
     while True:
         print("""
@@ -124,7 +130,7 @@ def options_menu() :
                 nokia()  
             case _:
                 print("Wrong input.")
-                nokia()
+                phonebook_menu()
 
 def messages_menu():
     while True:
@@ -184,6 +190,7 @@ def messages_menu():
                                 return
                             case _:
                                 print("Wrong input")
+
                                 break
                     case 2:
                         print("""
@@ -293,5 +300,25 @@ def call_Register_menu():
                 print("Wrong input")
                 call_Register_menu()
 
+def tones_menu():
+    while True:
+        print("""
+	TONES
+		
+		1-> Ringing tone
+		2-> Ringing volume
+		3-> Incoming call alert 
+		4-> Composer
+		5-> Message alert tone
+		6-> Keypad tones
+		7-> Warning and game tones
+		8-> Vibrating alert
+		9-> Screen saver
+		0-> Back
 
+
+	""")
+
+
+		
 nokia()
