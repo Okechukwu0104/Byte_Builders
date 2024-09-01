@@ -17,33 +17,48 @@ def bank():
 		1...Deposit
 		2...Withdrawal
 		3...Balance details	
-		3... exit
+		4... exit
 		''')
 	
         user_amount_count = 0
-        user_total_amount = 0
+        user_total_deposit = 0
+	user_total_withdrawal = 0
+	
 
         user_choice = float(input("input your choice: "))
         match user_choice:
             case 1:
                 amount_deposited =float(input("Enter amount to deposit (press -1 to exit): "))
                 while (amount_deposited !=-1) :
-                    user_total_amount += amount_deposited 
+                    user_total_deposit += amount_deposited 
 
                     user_amount_count+=1
                     amount_deposited = float(input("press -1 or continue depositing: "))
 
-                print ("Total:  #",user_total_amount, "\nyou deposited ", user_amount_count, " times")
-
-	    case 2: 
+                print ("Total:  #",user_total_deposit, "\nyou deposited ", user_amount_count, " times")
+		
+            case 2: 
                 amount_withdrawn =float(input("Enter amount to withdraw (press -1 to exit): "))
-		while (amount_withdrawn !=-1) :
-		    user_total_amount -= amount_withdrawn
-		    user_amount_count+=1
+                while (amount_withdrawn !=-1) :
+                    amount_withdrawn -= user_total_withdrawal 
+                    user_amount_count+=1
 
-		    amount_withdrawn = float(input("press -1 or continue withdrawing: "))
+                    amount_withdrawn = float(input("press -1 or continue withdrawing: "))
 
-		print ("Total left:  #",user_total_amount, "\nyou withdrew ", user_amount_count, " times")   			
+                    if (amount_withdrawn > user_total_amount):
+                        print("Insuffecient funds")
+
+                    balance = user_total_amount - amount
+
+                    print ("Total left:  #",user_total_amount, "\nyou withdrew ", user_amount_count, " times")
+                    
+            case 3:
+                    print("Account review: ", user_total_amount)
+
+            case 4:
+                print("Thank you for banking with us" )
+                break
+            			
 
 
 
