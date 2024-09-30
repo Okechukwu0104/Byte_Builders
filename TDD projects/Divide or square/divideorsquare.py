@@ -5,7 +5,7 @@ def is_decimal(number):
 	return isinstance(number, decimal.Decimal)	
 
 def divide_or_square(number):
-	if is_decimal(number) or isinstance(number, str):
+	if isinstance(number, str):
 		raise TypeError("Invalid type")
 		
 	else:
