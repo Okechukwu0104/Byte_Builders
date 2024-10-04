@@ -2,7 +2,7 @@ import unittest
 import multiply
 
 
-class TestMultiply(unittest.TestCase):
+class TestMultiplication(unittest.TestCase):
 	def test_that_all_functions_exist(self):
 		multiply.values(3,4)
 
