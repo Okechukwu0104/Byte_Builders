@@ -1,15 +1,15 @@
 vowels = ['A','E','I','O','U','a','e','i','o','u']
-letter = "Adobe"
+letter = "A"
 count = len(letter)
 check = False
 
-
-for characters in range(len(vowels)):
-	if count >1:
-		print("input a single letter")
-	if letter == vowels[characters]:
-		check = True
-print(check)
+if count >1:
+	print("input a single letter")
+else:
+	for characters in range(len(vowels)):
+		if letter == vowels[characters]:
+			check = True
+	print(check)
 		
 	
 		
