@@ -8,15 +8,15 @@ PERCENT = percentage/100
 
 if years > 0 and percentage > 0 and investment > 0:
 	years = round(years)
-	print("we are using",years,"years (integer)")
+	print("\nwe are using",years,"years (integer)")
 
 	print("\nyear              ROI                   AAI")
 
-	print("")
 	for year in range(1,years+1):
-		print(round(year), end="            \t")
-		print(round(investment,3), end="            \t")
+		print(year, end="            \t")
 		roi = investment * PERCENT
+
+		print(round(roi,3), end="            \t")
 		investment+=roi
 		print(round(investment, 3) )
 	
