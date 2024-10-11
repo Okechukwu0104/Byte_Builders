@@ -1,5 +1,4 @@
 
-
 def print_fib_sequence():
 	number_input = int(input("input a number: "))
 	array = []
