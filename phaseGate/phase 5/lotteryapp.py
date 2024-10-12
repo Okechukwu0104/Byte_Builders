@@ -1,17 +1,18 @@
 import random
 
 user_input = input("input your 3 numbers: ")
-count = len(user_input)
+input_count = len(user_input)
 count = 0
 in_built = []
-while count !=3:
-	value = random.randrange(1,10)
-	in_built.insert(count, value)
-	count +=1
-print(in_built)
+
 user = []
 
-if count == 3:
+if input_count == 3:
+	while count !=3:
+		value = random.randrange(1,10)
+		in_built.insert(count, value)
+		count +=1
+	print(in_built)
 	user_input = int(user_input)
 	for digits in range(count):
 		extract = abs(user_input % 10)			
