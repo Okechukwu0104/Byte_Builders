@@ -1,6 +1,6 @@
 import random
 
-user_input = input("input your 3 numbers: ")
+user_input = input("input your 3 digits together: ")
 input_count = len(user_input)
 count = 0
 in_built = []
