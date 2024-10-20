@@ -1,0 +1,76 @@
+/*
+Problem: Valid Credit Card Number Generator
+
+
+
+Description: You need to write a function that generates valid credit card numbers for testing purposes. The generated numbers should pass the Luhn algorithm check, which is used to validate credit card numbers.
+
+Requirements:
+
+The function should generate a credit card number with a specified length (typically 16 digits).
+The generated number should start with a specific digit or set of digits (known as the Bank Identification Number or BIN).
+The function should ensure the generated number passes the Luhn algorithm check.
+Input:
+An integer length representing the total length of the credit card number (e.g., 16).
+A string bin representing the starting digits of the credit card number (e.g., “4” for Visa cards).
+Output:
+
+A string representing a valid credit card number.
+
+
+
+
+
+Steps of the Luhn Algorithm:
+Starting from the rightmost digit (the check digit), move left and double the value of every second digit.
+If doubling a digit results in a number greater than 9, subtract 9 from the result.
+Sum all the digits.
+This includes the digits that were doubled (and possibly adjusted) and the digits that were not doubled.
+If the total modulo 10 is equal to 0, then the number is valid according to the Luhn formula.
+Otherwise, the number is not valid.
+Example:
+Let’s validate the credit card number 4539 1488 0343 6467:
+
+Double every second digit from the right:
+Original: 4 5 3 9 1 4 8 8 0 3 4 3 6 4 6 7
+Doubled: 8 5 6 9 2 4 16 8 0 3 8 3 12 4 12 7
+Subtract 9 from numbers over 9:
+Adjusted: 8 5 6 9 2 4 7 8 0 3 8 3 3 4 3 7
+Sum all the digits:
+Sum: 8 + 5 + 6 + 9 + 2 + 4 + 7 + 8 + 0 + 3 + 8 + 3 + 3 + 4 + 3 + 7 = 80
+Check if the total modulo 10 is 0:
+80 % 10 = 0
+
+
+BIN Conversion: Convert the BIN to a list of integers.
+Generate Digits: Randomly generate digits to fill the card number up to the desired length minus one.
+Luhn Check Digit: Calculate the check digit using the Luhn algorithm and append it to the card number.
+
+
+*/
+
+import java.util.*;
+public class CreditCardGenerator{
+
+   public static void main(String args[]){
+	Scanner userInput = new Scanner(System.in);
+
+	System.out.print("Input card number length: ");
+	int length = userInput.nextInt();
+
+	System.out.print("input your BIN(Bank Identification Number)");
+	int BIN = userInput.nextInt();
+
+	
+   }
+
+}
+
+
+
+
+
+
+
+
+
