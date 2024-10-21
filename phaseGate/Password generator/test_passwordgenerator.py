@@ -20,3 +20,7 @@ class Testpasswordgenerator(unittest.TestCase):
 
 	def test_to_check_if_function_contains_symbols(self):
 		self.assertEqual(passwordgenerator.length_check(16),True)
+
+
+	def test_to_check_if_function_contains_digits(self):
+		self.assertEqual(passwordgenerator.digit_checker(),True)

@@ -61,5 +61,17 @@ def symbol_checker():
 symbol_checker()
 
 
+def digit_checker():
+	password_array = gen()
+	symbols = string.punctuation
+	for count in range(16):
+		character = password_array[count]
+		return(password_array[count] ==character[count])
+		break;
+
+		
+digit_checker()
+
+
 
 
