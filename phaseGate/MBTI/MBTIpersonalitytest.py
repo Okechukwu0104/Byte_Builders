@@ -30,7 +30,7 @@ class MBTIPersonalityTest:
 		print(f"You're Welcome {name}.\nPlease answer these 20 set of questions ('A' or 'B')\n")
 		
 		options = []
-		answers = [None] * 20
+		answers = [None] 
 		count = 0
 		counter = 1
 		
@@ -39,12 +39,12 @@ class MBTIPersonalityTest:
 			option = input().strip().upper()
 			if option == "A":
 				options.append(self.optionsA[count])
-				answers[count] = option
+				answers.append( option)
 				count += 1
 				counter += 1
 			elif option == "B":
 				options.append(self.optionsB[count])
-				answers[count] = option
+				answers.append( option)
 				count += 1
 				counter += 1
 			else:
@@ -53,8 +53,89 @@ class MBTIPersonalityTest:
 		self.sort_and_display(options, answers, name)
 		
 	def sort_and_display(self, options, answers, name):
-		# Implement the sorting and displaying logic here
-		pass
+		options_array = [[None for _ in range(5)] for _ in range(4)]
+		answers_array = [[None for _ in range(5)] for _ in range(4)]
+		personality_trait = ""
+		counter1 = 0
+
+		for count1 in range(5):
+			for count2 in range(4):
+				options_array[count2][count1] = options[counter1]
+				answers_array[count2][count1] = answers[counter1]
+				counter1 += 1
+
+		versus_display = ["Extraverted (E) vs Introverted (I)","Sensing (S) vs Intuitive (N)","Thinking (T) vs Feeling (F)","Judging (J) vs Perceptive (P)"]
+
+    
+		print(f"\nHello {name}, You selected: \n\n\n")
+
+    
+		for count1 in range(4):
+        
+		
+			a_count = 0
+			b_count = 0
+			print(f"       -> {versus_display[count1]}\n")
+        
+			for count2 in range(5):
+            
+				print(f"{answers_array[count1][count2]}. {options_array[count1][count2]}")
+				if answers_array[count1][count2] == "a":
+					a_count += 1
+				else:
+               
+					b_count += 1
+            	
+			print()
+
+        
+			output = f"""
+        
+			Number of 'A' selected: {a_count}
+			number of 'B' selected: {b_count}
+        
+			"""
+			print(output)
+		
+			print()
+
+        
+			if a_count > b_count and count1 == 0:
+				personality_trait += "E"
+        
+			elif a_count < b_count and count1 == 0:
+				personality_trait += "I"
+
+        
+			if a_count > b_count and count1 == 1:
+				personality_trait += "S"
+        
+			elif a_count < b_count and count1 == 1:
+				personality_trait += "N"
+
+        
+			if a_count > b_count and count1 == 2:
+				personality_trait += "T"
+        
+			elif a_count < b_count and count1 == 2:
+				personality_trait += "F"
+
+        
+			if a_count > b_count and count1 == 3:
+				personality_trait += "J"
+        
+			elif a_count < b_count and count1 == 3:
+				personality_trait += "P"
+
+    
+		print(f"personalityTrait: {personality_trait}\n\n")
+		personality_brief(personality_trait)
+
+
+
+	def personality_brief(trait):
+		print(f"Personality Brief for {trait}")
+
 
 if __name__ == "__main__":
 	test = MBTIPersonalityTest()
