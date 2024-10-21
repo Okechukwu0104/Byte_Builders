@@ -8,7 +8,7 @@ class Testpasswordgenerator(unittest.TestCase):
 		passwordgenerator.gen()
 		passwordgenerator.character_checker()
 		passwordgenerator.symbol_checker()
-
+		passwordgenerator.length_check(18)
 
 
 	def test_to_check_if_function_contains_letters_capital_and_lowercase(self):
@@ -18,3 +18,5 @@ class Testpasswordgenerator(unittest.TestCase):
 	def test_to_check_if_function_contains_symbols(self):
 		self.assertEqual(passwordgenerator.symbol_checker(),True)
 
+	def test_to_check_if_function_contains_symbols(self):
+		self.assertEqual(passwordgenerator.length_check(16),True)

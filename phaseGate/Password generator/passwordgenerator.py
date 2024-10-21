@@ -2,6 +2,9 @@ import random
 import string
 
 
+def length_check(length):
+	return length >=16 and length <=20
+
 
 def generate_password():
 	password = ""
@@ -13,10 +16,10 @@ def generate_password():
 	length = len(password)
 	print(password)
 	print("count :",length)
-
+	length_check(length)
 generate_password()
 
-
+	
 
 
 def gen():
