@@ -30,7 +30,7 @@ class Testfirepractice(unittest.TestCase):
         expected = firepractice.sum_of_3rd_index(numbers)
         self.assertEqual(expected, result)
 
-    def test_to_sum_first_middle_last_elements(self):
+    def test_to_sum_first_middle_and_last_elements(self):
         numbers = [1, 2, 2, 6]
         result = firepractice.sum_of_3_indexes(numbers)
         expected = 9.0
@@ -40,3 +40,18 @@ class Testfirepractice(unittest.TestCase):
         result = firepractice.sum_of_3_indexes(numbers)
         expected = 11
         self.assertEqual(expected, result)
+
+    def test_that_functions_throw_exceptions_for_wrong_input(self):
+        length = 5
+        numbers = [-1, 2, 4, 5, 'wee']
+        negative = [1, 2, -4, 5, 6]
+
+        self.assertRaises(TypeError, firepractice.duplicate_elements, (numbers, length))
+        self.assertRaises(TypeError, firepractice.sum_of_3rd_index(numbers))
+        self.assertRaises(TypeError, firepractice.duplicate_elimination, (numbers, length))
+        self.assertRaises(TypeError, firepractice.sum_of_3_indexes, numbers)
+        self.assertRaises(ValueError, firepractice.duplicate_elements, numbers, length)
+        self.assertRaises(ValueError, firepractice.sum_of_3rd_index, negative)
+        self.assertRaises(ValueError, firepractice.duplicate_elimination, numbers, length)
+        self.assertRaises(TypeError, firepractice.sum_of_3_indexes, negative)
+
